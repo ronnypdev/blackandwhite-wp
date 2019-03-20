@@ -129,8 +129,21 @@ function blackandwhite_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+    wp_enqueue_script( 'jquery_slim', 'https://code.jquery.com/jquery-3.2.1.slim.min.js');
+	wp_enqueue_script('propper_js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js');
+	wp_enqueue_script('bootstrap_js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js');
+
 }
 add_action( 'wp_enqueue_scripts', 'blackandwhite_scripts' );
+
+function blackandwhite_styles() {
+    wp_enqueue_style( 'boostrap_css' , 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+    wp_enqueue_style( 'app_css' , get_template_directory_uri() . '/assets/css/app.css');
+}
+
+add_action( 'wp_enqueue_scripts', 'blackandwhite_styles' );
+
 
 /**
  * Implement the Custom Header feature.
