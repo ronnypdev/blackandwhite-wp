@@ -145,6 +145,9 @@ function blackandwhite_styles() {
 add_action( 'wp_enqueue_scripts', 'blackandwhite_styles' );
 
 
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
 /**
  * Implement the Custom Header feature.
  */

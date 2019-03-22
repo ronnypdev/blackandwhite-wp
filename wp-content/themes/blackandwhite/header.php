@@ -26,19 +26,24 @@
     <!-- header -->
     <header class="p-3">
         <div class="container">
-            <nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-toggleable-md navbar-light bg-light main-nav"><a class="navbar-brand mt-2" href="index.html">
-                <img src="<?php echo get_template_directory_uri();?>/assets/images/logo.png" alt="Black + White logo icon"/></a>
+            <nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-toggleable-md navbar-light bg-light main-nav">
+                <a class="navbar-brand mt-2" href="index.html">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/logo.png" alt="Black + White logo icon"/>
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <!-- List navigation-->
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="nav bw-nav">
-                        <li class="nav-item"><a class="nav-link" href="index.html">home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">our services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">how we work</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">testimonials</a></li>
-                        <li class="nav-item"><a class="nav-link" href="work.html">work samples</a></li>
-                    </ul>
-                </div>
+                        <?php
+                            wp_nav_menu( array(
+                                    'theme_location' => 'menu-1',
+                                    'container' => 'div',
+                                    'container_id' => 'navbarNav',
+                                    'container_class' => 'collapse navbar-collapse justify-content-end',
+                                    'menu_class' => 'nav bw-nav',
+                                    'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+                                    'walker' => new WP_Bootstrap_Navwalker(),
+                                    'item_wrap' => '%3$s'
+                            ) );
+                        ?>
                 <!-- End list navigation-->
             </nav>
         </div>
