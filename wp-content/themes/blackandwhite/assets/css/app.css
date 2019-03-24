@@ -98,7 +98,7 @@ ul {
 .services-bg {
   width: 100%;
   height: 231px;
-  background: url("../images/fish-bg.jpg") no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -126,7 +126,22 @@ ul {
           flex-direction: column;
   height: 100vh; }
   .services .services-list {
-    list-style: square; }
+    list-style: square;
+  }
+
+.services .services-list li {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.services .services-list li a {
+  color: #ffffff;
+}
+
+.services .services-list li a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
 
 @media (max-width: 991.98px) {
   .list-div {
